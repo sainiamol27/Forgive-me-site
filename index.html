@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgive Me 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+    }
+    h1 {
+      color: white;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 5px #ff6f91;
+    }
+    p {
+      color: #fff;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    button {
+      background: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .hearts {
+      position: absolute;
+      top: -50px;
+      font-size: 2em;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Dear Love 💛</h1>
+  <p>I know I hurt you... and I’m truly sorry.<br>
+     Please forgive me 😔</p>
+  <button onclick="forgive()">Forgive Me 💖</button>
+  <button onclick="upset()">Still Upset 😢</button>
+
+  <script>
+    function forgive() {
+      alert("Yay! 🥰 Thank you! I promise to be better ❤️");
+      document.body.innerHTML = "<h1>💖 I Love You Rochelle💖</h1><p>Forever & Always 🌸</p>";
+    }
+    function upset() {
+      alert("I understand 💔... but I’ll keep trying to make you happy!");
+    }
+    // falling hearts animation
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("hearts");
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      heart.innerText = "💖";
+      document.body.appendChild(heart);
+      setTimeout(() => { heart.remove(); }, 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
